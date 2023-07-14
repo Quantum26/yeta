@@ -1,11 +1,18 @@
 //var fs = require('fs')
 import React from 'react'
 import { Component } from 'react';
+import CategoryGallery from './CategoryGallery';
 
-import CategoryGallery from './CategoryGallery'
+const MongoClient = require('mongodb').MongoClient;
+
+var mongoose_token = require('../secrets/mongoose') ;
+MongoClient.connect(mongoose_token.connection);
+
 const nominations = [
+    ["Worst Drip", "dripped ian.PNG", "sad ian.JPG", "thumbs up ian.PNG", "dat hoe.JPG"],
     ["Best Bestest", "akul.PNG", "arjuyn.PNG", "hoodie girl.PNG", "Wooloo.gif"],
-    ["Best Bestest", "akul.PNG", "arjuyn.PNG", "hoodie girl.PNG", "Wooloo.gif"]
+    ["Best Bestest", "akul.PNG", "arjuyn.PNG", "hoodie girl.PNG", "Wooloo.gif"],
+    ["category 'v'", "ben.PNG", "blond.PNG", "colin.PNG", "corrin.PNG"]
 ]
 class CategoryPage extends Component {
     constructor(props){
@@ -16,7 +23,7 @@ class CategoryPage extends Component {
       };
     }
     setUser(username, password){
-        
+
         this.setState({username:username, loggedIn:true})
     }
     updateVote(index,vote){

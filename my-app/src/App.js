@@ -18,7 +18,7 @@ function App() {
         <div className="App-content">
         <Routes>
           <Route path="/voting" element={<CategoryPage/>}></Route>
-          <Route path="/" element={<main>Oi this aint done bruv.</main>}></Route>
+          <Route path="/" element={<main style={{height:"2000px", fontSize:"50px", fontFamily:"Sans-serif"}} >Oi this aint done bruv.</main>}></Route>
         </Routes>
         </div>
       </div>
